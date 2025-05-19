@@ -11,6 +11,7 @@ import SwiftData
 struct LocationsView: View {
     @Environment(\.modelContext) var modelContext
     @Query private var locations: [Location]
+    //@State private var path = NavigationPath()
     
     /*
     init() {
@@ -24,20 +25,21 @@ struct LocationsView: View {
         NavigationSplitView {
             List {
                 ForEach(locations) { location in
-                    NavigationLink {
+                    NavigationLink(location.name) {
                         LocationDetailView(location: location)
                         /*
-                        Text(location.name)
-                        Text(location.desc)
-                        HStack{
-                            Text("Sublocations: ")
-                            Text(String(location.children.count)).background(.blue).foregroundStyle(.white).clipShape(.capsule)
-                        }
+                         Text(location.name)
+                         Text(location.desc)
+                         HStack{
+                         Text("Sublocations: ")
+                         Text(String(location.children.count)).background(.blue).foregroundStyle(.white).clipShape(.capsule)
+                         }
                          */
+                        //Text(location.name)
+                        //path.append(location)
                         
-                    } label: {
-                        Text(location.name)
                     }
+                    
                 }
                 //.onDelete(perform: deleteItems)
             }
@@ -56,8 +58,8 @@ struct LocationsView: View {
                         Label("Delete All", systemImage: "trash")
                     }
                 }
-
             }
+
         } detail: {
             Text("Select a location")
         }

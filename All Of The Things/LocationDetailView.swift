@@ -11,7 +11,9 @@ import SwiftData
 struct LocationDetailView: View {
     let location: Location
     var body: some View {
-        Text("Name: " + String(location.name))
+        VStack{
+            Text("Name: " + String(location.name))
+        }
     }
 }
 

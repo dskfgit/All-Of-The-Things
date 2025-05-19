@@ -25,16 +25,7 @@ struct TypesOfThingsView: View {
             List {
                 ForEach(typesOfThings) { typeOfThing in
                     NavigationLink {
-                        TypeOfThingDetailView(typeOfThing: typeOfThing)
-                        /*
-                        Text(location.name)
-                        Text(location.desc)
-                        HStack{
-                            Text("Sublocations: ")
-                            Text(String(location.children.count)).background(.blue).foregroundStyle(.white).clipShape(.capsule)
-                        }
-                         */
-                        
+                        TypeOfThingDetailView(typeOfThing: typeOfThing)                        
                     } label: {
                         Text(typeOfThing.name)
                     }
