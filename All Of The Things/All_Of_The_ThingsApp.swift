@@ -27,7 +27,7 @@ struct All_Of_The_ThingsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AOTTNavigationView()
+            AOTTContentView()
         }
         .modelContainer(sharedModelContainer)
     }
